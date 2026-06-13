@@ -2,6 +2,6 @@
 #define PIT_H
 
 void pit_init();
-unsigned int pit_ticks();
+unsigned int pit_get_ticks();
 
 #endif
