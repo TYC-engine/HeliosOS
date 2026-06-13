@@ -10,7 +10,7 @@
 ![Status](https://img.shields.io/badge/status-development-orange)
 ![Architecture](https://img.shields.io/badge/architecture-x86-lightgrey)
 ![Language](https://img.shields.io/badge/language-C%20%7C%20Assembly-green)
-![License](https://img.shields.io/badge/license-Apache-2.0-purple)
+![License](https://img.shields.io/badge/license-Apache-purple)
 
 *Building an operating system from the boot sector to the kernel.*
 
