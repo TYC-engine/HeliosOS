@@ -2,32 +2,17 @@
 
 gdt_start:
 
-gdt_null:
-    dq 0
+dq 0
 
-gdt_code:
-    dw 0xFFFF
-    dw 0x0000
-    db 0x00
-    db 10011010b
-    db 11001111b
-    db 0x00
+dq 0x00CF9A000000FFFF
 
-gdt_data:
-    dw 0xFFFF
-    dw 0x0000
-    db 0x00
-    db 10010010b
-    db 11001111b
-    db 0x00
+dq 0x00CF92000000FFFF
 
 gdt_end:
 
 gdt_descriptor:
-    dw gdt_end - gdt_start - 1
+    dw gdt_end-gdt_start-1
     dd gdt_start
-
-global load_gdt
 
 load_gdt:
     lgdt [gdt_descriptor]
