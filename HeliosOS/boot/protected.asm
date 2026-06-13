@@ -1,22 +1,17 @@
 [BITS 32]
 
-global protected_mode
+KERNEL_ADDR equ 0x20000
 
 protected_mode:
 
-    mov ax, 0x10
-    mov ds, ax
-    mov es, ax
-    mov fs, ax
-    mov gs, ax
-    mov ss, ax
+    mov ax,0x10
 
-    mov esp, 0x90000
+    mov ds,ax
+    mov es,ax
+    mov fs,ax
+    mov gs,ax
+    mov ss,ax
 
-    mov dword [0xB8000], 0x0F650F48
-    mov dword [0xB8004], 0x0F690F6C
-    mov dword [0xB8008], 0x0F730F6F
+    mov esp,0x90000
 
-.hang:
-    hlt
-    jmp .hang
+    jmp KERNEL_ADDR
