@@ -19,14 +19,7 @@ static void set_gate(int n, uint32_t handler)
 
 void idt_init()
 {
-    idtp.limit = sizeof(idt) - 1;
-    idtp.base = (uint32_t)&idt;
-
-    set_gate(0, (uint32_t)isr0);
-    set_gate(1, (uint32_t)isr1);
-
-    set_gate(32, (uint32_t)irq0);
-    set_gate(33, (uint32_t)irq1);
-
-    __asm__ volatile("lidt %0" : : "m"(idtp));
+    set_gate(32, (uint32_t)irq0);  // timer
+    set_gate(33, (uint32_t)irq1);  // keyboard
+    set_gate(44, (uint32_t)irq12); // mouse
 }
