@@ -13,16 +13,14 @@ typedef struct heap_block
 
 } heap_block_t;
 
-void heap_init(uint32_t heap_start, uint32_t heap_size);
+void heap_init(uint32_t start, uint32_t size);
 
 void* kmalloc(uint32_t size);
 void* kcalloc(uint32_t count, uint32_t size);
 void* krealloc(void* ptr, uint32_t size);
-
 void kfree(void* ptr);
 
-uint32_t heap_total_memory();
-uint32_t heap_used_memory();
-uint32_t heap_free_memory();
+uint32_t heap_get_used();
+uint32_t heap_get_free();
 
 #endif
